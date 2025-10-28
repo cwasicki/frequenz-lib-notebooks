@@ -323,8 +323,12 @@ class MicrogridConfig:
             data = tomllib.load(f)
 
         assert isinstance(data, dict)
+        # If required top-level key is missing,
+        # try to load old dict format
+        if "assets" not in data:
+            return cls._load_table_entries(data)
 
-        return cls._load_table_entries(data)
+        return cls._load_table_entries(data["assets"].get("microgrids", {}))
 
     @staticmethod
     def load_configs(
