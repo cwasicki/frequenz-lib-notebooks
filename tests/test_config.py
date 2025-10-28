@@ -110,9 +110,13 @@ def test_microgrid_config_formula(valid_microgrid_config: MicrogridConfig) -> No
         valid_microgrid_config.formula("pv", "INVALID_METRIC")
 
 
-def test_load_configs(mocker: MockerFixture) -> None:
+@pytest.mark.parametrize(
+    "prefix", [pytest.param(""), pytest.param("[assets.microgrids]\n")]
+)
+def test_load_configs(mocker: MockerFixture, prefix: str) -> None:
     """Test loading configurations for multiple microgrids from mock TOML files."""
-    toml_data = """
+    toml_data = f"""
+    {prefix}
     1.meta.microgrid_id = 1
     1.meta.name = "Test Grid"
     1.meta.gid = 1
