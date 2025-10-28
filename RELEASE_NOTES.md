@@ -8,6 +8,7 @@
 
 <!-- Here goes notes on how to upgrade from previous versions, including deprecations and what they should be replaced with -->
 
+- Switches to schema-based loading of microgrid config files.
 - The minimum supported version of `matplotlib` is now `v3.9.2`.
 
 ## New Features
