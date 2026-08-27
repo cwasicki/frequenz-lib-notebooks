@@ -22,9 +22,12 @@ from frequenz.lib.notebooks.reporting.utils.colors import COLOR_DICT
 gridpool = sys.modules.setdefault(
     "frequenz.gridpool", types.ModuleType("frequenz.gridpool")
 )
+gridpool_config = sys.modules.setdefault(
+    "frequenz.gridpool.config", types.ModuleType("frequenz.gridpool.config")
+)
 
-if not hasattr(gridpool, "MicrogridConfig"):
-    setattr(gridpool, "MicrogridConfig", object)
+if not hasattr(gridpool_config, "MicrogridConfig"):
+    setattr(gridpool_config, "MicrogridConfig", object)
 
 
 def test_plot_time_series_battery_soc_uses_secondary_axis_for_soc() -> None:

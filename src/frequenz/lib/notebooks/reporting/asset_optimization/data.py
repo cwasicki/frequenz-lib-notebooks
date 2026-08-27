@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 from dotenv import load_dotenv
 from frequenz.client.assets import AssetsApiClient
-from frequenz.gridpool import load_configs
+from frequenz.gridpool.config import load_configs
 
 from frequenz.data.microgrid import MicrogridData
 from frequenz.lib.notebooks._credentials import resolve_credentials
@@ -103,7 +103,7 @@ async def init_microgrid_data(
         server_url=service_address,
         auth_key=reporting_key,
         sign_secret=reporting_secret,
-        microgrid_configs=mcfg,
+        microgrid_configs={str(mid): cfg for mid, cfg in mcfg.microgrids.items()},
     )
 
 

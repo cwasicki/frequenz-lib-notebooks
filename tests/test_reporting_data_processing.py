@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from typing import cast
 
 import pandas as pd
-from frequenz.gridpool import MicrogridConfig
+from frequenz.gridpool.config import MicrogridConfig
 
 from frequenz.lib.notebooks.reporting.data_processing import create_energy_report_df
 from frequenz.lib.notebooks.reporting.utils.column_mapper import ColumnMapper

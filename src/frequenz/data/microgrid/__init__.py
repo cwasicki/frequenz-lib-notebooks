@@ -3,7 +3,7 @@
 
 """Initialize the microgrid data module."""
 
-from frequenz.gridpool import MicrogridConfig
+from frequenz.gridpool.config import MicrogridConfig
 
 from ._stateful_data_fetcher import StatefulDataFetcher
 from .component_data import MicrogridData

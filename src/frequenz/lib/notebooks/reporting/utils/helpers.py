@@ -48,7 +48,7 @@ import plotly.express as px
 import yaml
 from frequenz.client.assets import AssetsApiClient
 from frequenz.client.common.microgrid import MicrogridId
-from frequenz.gridpool import MicrogridConfig
+from frequenz.gridpool.config import MicrogridConfig
 
 from frequenz.lib.notebooks._credentials import resolve_credentials
 from frequenz.lib.notebooks.reporting.metrics.reporting_metrics import (
